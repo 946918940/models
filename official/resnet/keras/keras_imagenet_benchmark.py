@@ -334,6 +334,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
     FLAGS.model_dir = self._get_model_dir('benchmark_8_gpu_tweaked')
     FLAGS.batch_size = 128 * 8  # 8 GPUs
     FLAGS.datasets_num_private_threads = 14
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def benchmark_xla_8_gpu(self):
@@ -371,6 +372,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
     FLAGS.model_dir = self._get_model_dir('benchmark_8_gpu_fp16')
     FLAGS.batch_size = 256 * 8  # 8 GPUs
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def benchmark_8_gpu_fp16_dynamic_tweaked(self):
@@ -386,6 +388,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
     FLAGS.batch_size = 256 * 8  # 8 GPUs
     FLAGS.loss_scale = 'dynamic'
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def benchmark_xla_8_gpu_fp16(self):
@@ -413,6 +416,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
     FLAGS.model_dir = self._get_model_dir('benchmark_xla_8_gpu_fp16_tweaked')
     FLAGS.batch_size = 256 * 8  # 8 GPUs
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def benchmark_xla_8_gpu_fp16_dynamic_tweaked(self):
@@ -429,6 +433,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
     FLAGS.batch_size = 256 * 8  # 8 GPUs
     FLAGS.loss_scale = 'dynamic'
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def benchmark_xla_8_gpu_fp16_tensorboard_tweaked(self):
@@ -444,6 +449,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
         'benchmark_xla_8_gpu_fp16_tensorboard_tweaked')
     FLAGS.batch_size = 256 * 8  # 8 GPUs
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     FLAGS.enable_tensorboard = True
     self._run_and_report_benchmark()
 
@@ -498,6 +504,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
         'benchmark_graph_xla_8_gpu_fp16_tweaked')
     FLAGS.batch_size = 256 * 8  # 8 GPUs
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def benchmark_graph_xla_8_gpu_fp16_dynamic_tweaked(self):
@@ -514,6 +521,7 @@ class Resnet50KerasBenchmarkBase(keras_benchmark.KerasBenchmark):
     FLAGS.batch_size = 256 * 8  # 8 GPUs
     FLAGS.loss_scale = 'dynamic'
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def fill_report_object(self, stats):
@@ -636,6 +644,7 @@ class TrivialKerasBenchmarkReal(keras_benchmark.KerasBenchmark):
     FLAGS.model_dir = self._get_model_dir('benchmark_8_gpu_tweaked')
     FLAGS.batch_size = 256 * 8
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def benchmark_graph_8_gpu(self):
@@ -661,6 +670,7 @@ class TrivialKerasBenchmarkReal(keras_benchmark.KerasBenchmark):
     FLAGS.model_dir = self._get_model_dir('benchmark_graph_8_gpu_tweaked')
     FLAGS.batch_size = 256 * 8
     FLAGS.tf_gpu_thread_mode = 'gpu_private'
+    FLAGS.enable_experimental_perf_tuning = True
     self._run_and_report_benchmark()
 
   def fill_report_object(self, stats):
